@@ -3,201 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sreedhara GS | Development Expert/DevOps Lead</title>
+    <title>Sreedhara GS | Engineering Leader - Solution Architect</title>
     <style>
         :root {
-            --primary-color: #0056b3;
-            --secondary-color: #f8f9fa;
-            --accent-color: #e9ecef;
-            --text-color: #343a40;
-            --light-text: #6c757d;
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #2c3e50;
+            --light-text: #7f8c8d;
+            --background-color: #ecf0f1;
+            --card-background: #ffffff;
+            --border-color: #bdc3c7;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text-color);
-            line-height: 1.6;
-            background-color: #f8f9fa;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            background-color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--card-background);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
         
         header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 40px;
+            padding: 60px 40px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .profile-header {
+            position: relative;
+            z-index: 1;
         }
         
         .profile-header h1 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .profile-header h2 {
-            font-weight: 400;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            opacity: 0.9;
         }
         
         .contact-info {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 15px;
+            gap: 30px;
+            margin-top: 25px;
         }
         
         .contact-info div {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 25px;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-info div:hover {
+            transform: translateY(-3px);
         }
         
         .contact-info a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.2s ease;
+            transition: color 0.2s ease;
         }
         
         .contact-info a:hover {
-            opacity: 0.8;
-            text-decoration: underline;
+            color: #f1c40f;
         }
         
         main {
-            padding: 40px;
+            padding: 60px 40px;
         }
         
         section {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
         
         .section-title {
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            font-weight: 700;
             color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
         }
         
         .summary {
-            background-color: var(--secondary-color);
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 50px;
+            border-left: 5px solid var(--secondary-color);
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
         
         .skill-category {
-            margin-bottom: 15px;
+            background: var(--card-background);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
         }
         
         .skill-title {
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
         }
         
         .skill-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
         }
         
         .skill-tag {
-            background-color: var(--accent-color);
-            padding: 5px 10px;
-            border-radius: 15px;
+            background: linear-gradient(135deg, var(--secondary-color), #5dade2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
             font-size: 0.9rem;
+            font-weight: 500;
+            transition: transform 0.2s ease;
         }
         
-        .experience-item, .award-item, .education-item {
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+        
+        .experience-item {
+            background: var(--card-background);
+            padding: 40px;
+            border-radius: 15px;
             margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .experience-item:hover {
+            transform: translateY(-5px);
         }
         
         .experience-header {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
             flex-wrap: wrap;
-            margin-bottom: 10px;
         }
         
         .job-title {
-            font-weight: 600;
-            font-size: 1.2rem;
+            font-weight: 700;
+            font-size: 1.5rem;
             color: var(--primary-color);
-        }
-        
-        .company, .period {
             margin-bottom: 5px;
         }
         
-        .tech-stack {
-            font-style: italic;
-            margin-bottom: 10px;
-            color: var(--light-text);
-        }
-        
-        .project-title {
+        .company {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
             font-weight: 600;
-            margin-top: 15px;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
         
-        .contribution-list {
-            list-style-type: none;
-            margin-left: 20px;
+        .period {
+            background: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
         
-        .contribution-list li {
+        .achievement-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .achievement-list li {
             position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
+            padding: 12px 0 12px 30px;
+            border-bottom: 1px solid #f8f9fa;
         }
         
-        .contribution-list li:before {
-            content: "•";
+        .achievement-list li:before {
+            content: "▶";
             position: absolute;
             left: 0;
-            color: var(--primary-color);
+            color: var(--secondary-color);
+            font-weight: bold;
         }
         
-        .award-title, .edu-degree {
+        .achievement-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
             font-weight: 600;
         }
         
         footer {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
             text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
+            padding: 30px;
+            font-size: 1rem;
         }
         
         @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            header {
+                padding: 40px 20px;
+            }
+            
+            .profile-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            main {
+                padding: 40px 20px;
+            }
+            
             .experience-header {
                 flex-direction: column;
+                align-items: flex-start;
             }
-            header {
-                padding: 20px;
-            }
-            main {
-                padding: 20px;
+            
+            .skills-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -207,11 +316,11 @@
         <header>
             <div class="profile-header">
                 <h1>Sreedhara GS</h1>
-                <h2>Development Expert | DevOps Lead</h2>
+                <h2>Engineering Leader - Solution Architect</h2>
                 <div class="contact-info">
                     <div>
                         <span>📍</span>
-                        <span>Bangalore</span>
+                        <span>Bangalore, IN</span>
                     </div>
                     <div>
                         <span>📧</span>
@@ -219,11 +328,11 @@
                     </div>
                     <div>
                         <span>📱</span>
-                        <span>+91 988XXXXXX6</span>
+                        <span>+919880321906</span>
                     </div>
                     <div>
                         <span>💼</span>
-                        <a href="https://www.linkedin.com/in/sreedharags/" target="_blank">linkedin.com/in/sreedharags</a>
+                        <a href="https://www.linkedin.com/in/sreedharags/" target="_blank">LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -231,79 +340,87 @@
         
         <main>
             <div class="summary">
-                <p>I excel in managing large-scale applications from requirements gathering to project management and test planning. My focus is on designing highly available REST services and implementing robust DevOps practices to improve delivery pipelines. As a DevOps Lead, I specialize in infrastructure automation, continuous integration/continuous deployment (CI/CD), and cloud platform management. I lead with a coaching and mentoring approach, conducting thorough design and code reviews as a Technical Architect. Emphasizing agile practices and collaboration, I drive projects effectively without formal authority. Dedicated to evolving CI/CD services with tools like Jenkins, GitHub Actions, and Kubernetes, I lead teams of over 10 members to achieve targets and ensure quality deliveries through global collaboration.</p>
+                <p>Dynamic Engineering Leader with extensive experience leading global teams in building and scaling high-availability cloud platforms, AI-driven infrastructure solutions, and large-scale customer-facing products. Proven track record of driving <span class="highlight">99.96% uptime</span> for mission-critical SAP BTP services, spearheading Chaos Engineering frameworks to enhance resilience, and delivering AI-powered monitoring automation that reduced MTTR and operational costs. Adept at orchestrating DevOps pipelines, CI/CD automation, and container platforms across AWS, GCP, and Azure, while embedding reliability and security into production workflows.</p>
+                <br>
+                <p>Recognized for combining technical depth with leadership excellence, having led cross-functional teams of <span class="highlight">13+ engineers</span> to deliver impactful projects—from personalized recommendation engines serving millions of users to global cloud infrastructure optimizations that improved efficiency by <span class="highlight">20%</span>. Passionate about building empowered teams, fostering a culture of innovation, and delivering scalable engineering solutions that align with business outcomes.</p>
             </div>
             
             <section id="skills">
-                <h2 class="section-title">Skills</h2>
+                <h2 class="section-title">Technical Expertise</h2>
                 <div class="skills-container">
                     <div class="skill-category">
-                        <div class="skill-title">Programming Languages</div>
+                        <div class="skill-title">Programming & Development</div>
                         <div class="skill-list">
                             <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Spring</span>
-                            <span class="skill-tag">SpringBoot</span>
-                            <span class="skill-tag">Maven</span>
-                            <span class="skill-tag">Xcode</span>
                             <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Shell Scripting</span>
-                            <span class="skill-tag">YAML</span>
-                            <span class="skill-tag">Terraform</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Microservices</span>
+                            <span class="skill-tag">API Design</span>
+                            <span class="skill-tag">Event-Driven Architecture</span>
+                            <span class="skill-tag">Git</span>
                         </div>
                     </div>
                     
                     <div class="skill-category">
-                        <div class="skill-title">DevOps & Cloud</div>
+                        <div class="skill-title">Cloud & Infrastructure</div>
                         <div class="skill-list">
-                            <span class="skill-tag">CI/CD (Jenkins, GitHub Actions)</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">GCP</span>
+                            <span class="skill-tag">Azure</span>
+                            <span class="skill-tag">SAP BTP</span>
+                            <span class="skill-tag">Cloud Foundry</span>
+                            <span class="skill-tag">Serverless (Lambda)</span>
                             <span class="skill-tag">Docker</span>
                             <span class="skill-tag">Kubernetes</span>
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">Azure DevOps</span>
-                            <span class="skill-tag">Ansible</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-title">DevOps & Automation</div>
+                        <div class="skill-list">
+                            <span class="skill-tag">CI/CD Pipelines</span>
+                            <span class="skill-tag">Infrastructure as Code</span>
+                            <span class="skill-tag">Terraform</span>
+                            <span class="skill-tag">GitOps</span>
+                            <span class="skill-tag">Jenkins</span>
+                            <span class="skill-tag">Concourse</span>
+                            <span class="skill-tag">Self-Healing Automation</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-title">Monitoring & Observability</div>
+                        <div class="skill-list">
                             <span class="skill-tag">Prometheus</span>
                             <span class="skill-tag">Grafana</span>
-                            <span class="skill-tag">ELK Stack</span>
-                            <span class="skill-tag">Infrastructure as Code</span>
-                            <span class="skill-tag">Microservices</span>
-                            <span class="skill-tag">Cloud Foundry</span>
+                            <span class="skill-tag">Datadog</span>
+                            <span class="skill-tag">Dynatrace</span>
+                            <span class="skill-tag">AI-Based Monitoring</span>
+                            <span class="skill-tag">Chaos Engineering</span>
                         </div>
                     </div>
                     
                     <div class="skill-category">
-                        <div class="skill-title">Tools and Technologies</div>
+                        <div class="skill-title">Data & AI/ML</div>
                         <div class="skill-list">
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Perforce</span>
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">Jira</span>
-                            <span class="skill-tag">MaxDB</span>
-                            <span class="skill-tag">Apache Tomcat</span>
-                            <span class="skill-tag">SAP UI5</span>
-                            <span class="skill-tag">Vue.js</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">SAP Conversational AI</span>
-                            <span class="skill-tag">SonarQube</span>
+                            <span class="skill-tag">Recommendation Engines</span>
+                            <span class="skill-tag">Personalization Algorithms</span>
+                            <span class="skill-tag">Anomaly Detection</span>
+                            <span class="skill-tag">Predictive Monitoring</span>
+                            <span class="skill-tag">AIOps</span>
+                            <span class="skill-tag">Apache Spark</span>
                         </div>
                     </div>
                     
                     <div class="skill-category">
-                        <div class="skill-title">Platforms</div>
+                        <div class="skill-title">Security & Compliance</div>
                         <div class="skill-list">
-                            <span class="skill-tag">Multi-Cloud PAAS</span>
-                            <span class="skill-tag">Linux</span>
-                            <span class="skill-tag">SAP BTP</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <div class="skill-title">Roles</div>
-                        <div class="skill-list">
-                            <span class="skill-tag">DevOps Lead</span>
-                            <span class="skill-tag">Development Expert</span>
-                            <span class="skill-tag">Product Management</span>
-                            <span class="skill-tag">Team Lead</span>
-                            <span class="skill-tag">Scrum Master</span>
+                            <span class="skill-tag">Cloud Security (IAM, KMS)</span>
+                            <span class="skill-tag">Encryption</span>
+                            <span class="skill-tag">Secure Coding</span>
+                            <span class="skill-tag">ISO Compliance</span>
+                            <span class="skill-tag">SOC2</span>
+                            <span class="skill-tag">GDPR</span>
                         </div>
                     </div>
                 </div>
@@ -314,169 +431,92 @@
                 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <div class="job-title">Development Expert | DevOps Lead | PAAS PO for BTP Tools</div>
-                        <div class="period">Aug 2014 - Present</div>
+                        <div>
+                            <div class="job-title">Engineering Manager & Product Owner</div>
+                            <div class="company">SAP Labs India Pvt Ltd</div>
+                        </div>
+                        <div class="period">Current</div>
                     </div>
-                    <div class="company">SAP Labs India</div>
-                    
-                    <div class="project">
-                        <div class="project-title">SAP BTP Multicloud PAAS Landscape Management</div>
-                        <div class="tech-stack">Technologies: Java, Jenkins, GitHub, SAP BTP, Cloud Foundry, Docker, Kubernetes, Terraform</div>
-                        <p>Led a global team of 35 members as a Development Expert and DevOps Lead for SAP BTP Multicloud PAAS, ensuring nearly 100% landscape availability and managing precise biweekly updates and real-time hotfixes.</p>
-                        <div style="margin-top: 10px;">Key Contributions:</div>
-                        <ul class="contribution-list">
-                            <li>Spearheaded automation workflows and CI/CD pipelines, reducing update setup time by 40%.</li>
-                            <li>Implemented infrastructure as code practices using Terraform to manage cloud resources consistently.</li>
-                            <li>Set up containerized environments with Docker and Kubernetes for consistent deployment across cloud platforms.</li>
-                            <li>Collaborated with the development team to ensure timely hotfix deployments, improving response times by 30%.</li>
-                            <li>Managed a team of 10+ developers in Bangalore, enhancing productivity by 25%.</li>
-                            <li>Constantly collaborated with area product owners to integrate diverse features, resulting in a 20% increase in user satisfaction.</li>
-                            <li>Designed and implemented monitoring solutions with Prometheus and Grafana to ensure system health and performance.</li>
-                            <li>Enhanced landscape availability and efficient update management, reducing downtime by 50%.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="project">
-                        <div class="project-title">Central Dashboard Solution for SAP BTP Development Lifecycle Management</div>
-                        <div class="tech-stack">Technologies: Vue.js, Java Spring Boot, PostgreSQL, GitHub, Jira, SAP BTP, Cloud Connector, Docker, ELK Stack</div>
-                        <p>As Lead Developer and DevOps Architect, spearheaded the design and implementation of a central dashboard solution with integrated monitoring and logging capabilities.</p>
-                        <div style="margin-top: 10px;">Key Contributions:</div>
-                        <ul class="contribution-list">
-                            <li>Architected a scalable and high-performance solution, increasing system efficiency by 35%.</li>
-                            <li>Led a cross-functional team, enhancing collaboration and productivity by 40%.</li>
-                            <li>Implemented workflow automation, release decision support, and real-time dashboards, reducing manual effort by 50%.</li>
-                            <li>Developed and optimized core backend services, improving efficiency by 30%.</li>
-                            <li>Designed CI/CD pipelines with Jenkins and GitHub Actions to enhance deployment reliability and speed, decreasing deployment time by 20%.</li>
-                            <li>Implemented ELK Stack (Elasticsearch, Logstash, Kibana) for centralized logging and monitoring.</li>
-                            <li>Containerized applications using Docker for consistent deployment across environments.</li>
-                            <li>Engineered the infrastructure to fully leverage SAP BTP capabilities, resulting in a streamlined development lifecycle, improved team efficiency by 25%, and higher product quality.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="project">
-                        <div class="project-title">Web Application for Centralized SCM in Distributed Cluster</div>
-                        <div class="tech-stack">Technologies: Java (JAX-RS), Hibernate, SAP UI5, MaxDB, Apache Tomcat, Perl, Docker, Ansible</div>
-                        <p>Designed and implemented a mission-critical solution to manage over 100 Perforce instances across SAP with automated deployment and configuration management.</p>
-                        <div style="margin-top: 10px;">Key Contributions:</div>
-                        <ul class="contribution-list">
-                            <li>Architected a scalable MVC-based application for SCM infrastructure management, reducing management time by 40%.</li>
-                            <li>Led a high-performing team through all development phases, from concept to deployment, increasing productivity by 30%.</li>
-                            <li>Designed core backend services optimized for performance and scalability, improving system performance by 35%.</li>
-                            <li>Developed a user-friendly interface using SAP UI5, enhancing operator productivity by 25%.</li>
-                            <li>Integrated Perforce API for seamless interaction with SCM instances, reducing integration time by 20%.</li>
-                            <li>Implemented automated CI/CD pipelines, reducing deployment time by 30% and errors by 25%.</li>
-                            <li>Used Ansible for configuration management across the distributed infrastructure.</li>
-                            <li>Containerized application components using Docker to ensure consistent deployment.</li>
-                            <li>Utilized Perl for custom scripting to automate infrastructure management, improving operational efficiency by 35%.</li>
-                            <li>Resulted in a single interface for all Perforce instances and seamless CI/CD operations, leading to company-wide adoption of the solution.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="project">
-                        <div class="project-title">Xcode Maven Plugin Development</div>
-                        <div class="tech-stack">Technologies: Core Java, Maven, Jenkins, Xcode, SonarQube</div>
-                        <p>Spearheaded the development of a tool revolutionizing iOS build processes with integrated quality monitoring.</p>
-                        <div style="margin-top: 10px;">Key Contributions:</div>
-                        <ul class="contribution-list">
-                            <li>Architected a robust Maven plugin to centralize iOS build tasks, improving development efficiency by 35%.</li>
-                            <li>Led requirement analysis to ensure the plugin met diverse team needs, reducing requirement gathering time by 25%.</li>
-                            <li>Developed custom MOJOs (Maven Old Java Objects) to integrate Xcode functionalities within the Maven lifecycle, improving integration by 30%.</li>
-                            <li>Integrated code quality scanning with SonarQube to ensure consistent code standards.</li>
-                            <li>Set up automated build and test pipelines in Jenkins for continuous integration.</li>
-                        </ul>
-                    </div>
+                    <p>Directed a global team of <span class="highlight">13 engineers</span> delivering cloud solutions for SAP BTP, serving <span class="highlight">27,000+ customers</span> and <span class="highlight">2,800+ partners</span> worldwide.</p>
+                    <ul class="achievement-list">
+                        <li>Ensured <span class="highlight">99.96% uptime</span> for SAP BTP Cloud Foundry, strengthening customer trust and global service reliability</li>
+                        <li>Championed multicloud strategy (AWS, GCP, Azure), driving operational excellence across regions</li>
+                        <li>Spearheaded infrastructure optimization programs, reducing operational costs by <span class="highlight">20%</span> while improving efficiency and scalability</li>
+                    </ul>
                 </div>
                 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <div class="job-title">Senior Software Engineer</div>
-                        <div class="period">Jul 2013 - Aug 2014</div>
+                        <div>
+                            <div class="job-title">Technical Architect - AI-Based Infra Monitoring</div>
+                            <div class="company">SAP Labs India Pvt Ltd</div>
+                        </div>
+                        <div class="period">2022-2024</div>
                     </div>
-                    <div class="company">Samsung (SRIB)</div>
-                    
-                    <div class="project">
-                        <div class="project-title">Real-Time WebPush Notification Project</div>
-                        <div class="tech-stack">Technologies: Restful Services, JSP, MySQL, JDBC, Eclipse, Spring, SSL, AWS</div>
-                        <p>Developed a real-time web push notification system for instant content updates via a publish/subscribe model.</p>
-                        <div style="margin-top: 10px;">Key Contributions:</div>
-                        <ul class="contribution-list">
-                            <li>Conducted requirement analysis, software design, implementation, and architecture.</li>
-                            <li>Managed AWS deployment, ensuring secure and reliable notification delivery.</li>
-                            <li>Implemented CI/CD workflows for streamlined deployment to AWS environments.</li>
-                        </ul>
-                    </div>
+                    <p>Delivered an AI-driven monitoring & automation project that proactively monitors infrastructure, reports incidents via Gyro, and performs pre-defined remedial actions, improving system reliability and reducing manual operational overhead.</p>
+                    <ul class="achievement-list">
+                        <li>Defined and collaborated with stakeholders to design resilience & observability SLAs, data-drift thresholds, and automation governance</li>
+                        <li>Drove business impact by reducing issue detection and response time significantly, increasing uptime, and lowering operational risk</li>
+                        <li>Established a culture of proactive operations: trained global teams in using AI-based insights, alerting workflows, and decision-making based on monitoring dashboards and anomaly predictions</li>
+                    </ul>
                 </div>
                 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <div class="job-title">Software Engineer</div>
-                        <div class="period">Sept 2011 - Jul 2013</div>
+                        <div>
+                            <div class="job-title">Lead Development Expert - Chaos Engineering</div>
+                            <div class="company">SAP Labs India Pvt Ltd</div>
+                        </div>
+                        <div class="period">2020-2022</div>
                     </div>
-                    <div class="company">Nokia R&D</div>
-                    
-                    <div class="project">
-                        <div class="project-title">Feature Phone Application Development</div>
-                        <div class="tech-stack">Technologies: Java, MySQL, Eclipse</div>
-                        <p>Created a lightweight application for Nokia feature phones, incorporating an intuitive start page with personalized recommendations based on user history and a subscription module.</p>
-                        <div style="margin-top: 10px;">Key Contributions:</div>
-                        <ul class="contribution-list">
-                            <li>Designed and implemented the start page and subscription module, enhancing user experience.</li>
-                            <li>Conducted user history analysis to provide personalized recommendations.</li>
-                            <li>Set up automated build and deployment processes for faster release cycles.</li>
-                        </ul>
+                    <p>Built and led a Chaos Engineering framework on SAP BTP, inspired by Netflix Chaos Monkey, to proactively test resilience and minimize downtime.</p>
+                    <ul class="achievement-list">
+                        <li>Drove cross-functional collaboration with engineering and operations teams to establish resilience SLAs and embed failure testing into production workflows</li>
+                        <li>Achieved a <span class="highlight">30% improvement</span> in platform recovery time and <span class="highlight">40% reduction</span> in post-incident analysis and recovery time</li>
+                        <li>Developed and standardized incident response playbooks, strengthening global reliability practices</li>
+                        <li>Trained global engineering teams on Chaos Engineering best practices, fostering a culture of proactive reliability and continuous improvement</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Senior Software Engineer</div>
+                            <div class="company">Samsung Research India</div>
+                        </div>
+                        <div class="period">2011-2014</div>
                     </div>
-                </div>
-            </section>
-            
-            <section id="awards">
-                <h2 class="section-title">Awards and Certifications</h2>
-                
-                <div class="award-item">
-                    <div class="award-title">Architecture Curriculum in SAP</div>
-                    <p>Completed an advanced architecture curriculum at SAP, focusing on design patterns and scalable enterprise solutions.</p>
-                </div>
-                
-                <div class="award-item">
-                    <div class="award-title">Champion of Change</div>
-                    <p>Recognized for leading transformational initiatives, implementing strategic changes, and driving innovation within the organization.</p>
-                </div>
-                
-                <div class="award-item">
-                    <div class="award-title">Kepler Award</div>
-                    <p>Awarded for outstanding contributions to software development and project management, demonstrating exceptional leadership and technical expertise.</p>
-                </div>
-                
-                <div class="award-item">
-                    <div class="award-title">Springer Paper Publication</div>
-                    <p>Published a research paper in the Springer Journal, contributing to advancements in software engineering and cloud technologies.</p>
+                    <p>Designed and implemented a recommendation engine leveraging user behavior, preferences, and activity signals to deliver personalized newsfeeds.</p>
+                    <ul class="achievement-list">
+                        <li>Built scalable cloud-native architecture (AWS/GCP/Azure) ensuring high availability, fault tolerance, and low-latency delivery to millions of users</li>
+                        <li>Applied Agile methodologies to deliver features iteratively, collaborating with cross-functional teams on sprint planning, backlog grooming, and retrospectives</li>
+                        <li>Optimized algorithms and infrastructure for performance and scalability, enabling seamless real-time recommendations under heavy traffic loads</li>
+                        <li>Contributed as a Senior Software Engineer while mentoring junior team members and ensuring engineering best practices across the team</li>
+                    </ul>
                 </div>
             </section>
             
             <section id="education">
                 <h2 class="section-title">Education</h2>
                 
-                <div class="education-item">
-                    <div class="edu-degree">BE, Electronics and Communication – 81.15%</div>
-                    <p>UVCE Bangalore, 2007 - 2011</p>
-                </div>
-                
-                <div class="education-item">
-                    <div class="edu-degree">PUC Science – 79.15%</div>
-                    <p>Alfalah PU College, 2007</p>
-                </div>
-                
-                <div class="education-item">
-                    <div class="edu-degree">SSLC – 87.04%</div>
-                    <p>SUSRHS Gattipura, 2005</p>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">BE, Electronics and Communication</div>
+                            <div class="company">University Visvesvaraya College of Engineering</div>
+                        </div>
+                        <div class="period">2007 — 2011</div>
+                    </div>
+                    <p>Graduated from Bangalore, with strong foundation in engineering principles, mathematics, and problem-solving that laid the groundwork for a successful career in software engineering and technical leadership.</p>
                 </div>
             </section>
         </main>
         
         <footer>
             <p>
-                © 2025 Sreedhara GS | Development Expert | DevOps Lead
-                &nbsp;|&nbsp;
-                <a href="profile.html" style="color:white; text-decoration:underline;">View Profile</a>
+                © 2025 Sreedhara GS | Engineering Leader - Solution Architect
+                <br><br>
+                “Building empowered teams, fostering innovation, and delivering scalable engineering solutions that align with business outcomes.”
             </p>
         </footer>
     </div>
